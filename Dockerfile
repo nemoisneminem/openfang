@@ -7,7 +7,7 @@ COPY crates ./crates
 COPY xtask ./xtask
 COPY agents ./agents
 COPY packages ./packages
-RUN cargo build --release --bin openfang
+RUN cargo build --locked --release --bin openfang
 
 FROM debian:bookworm-slim
 RUN apt-get update && apt-get install -y ca-certificates && rm -rf /var/lib/apt/lists/*
